@@ -128,7 +128,7 @@ const mockData = [
    "updated": "2020-05-27T11:45:37.792Z",
    "summary": "React is Fun",
    "description": "Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
-   "location": "Berlin, Germany",
+   "location": "Frankfurt, Germany",
    "creator": {
     "email": "fullstackwebdev@careerfoundry.com",
     "self": true
@@ -167,7 +167,7 @@ const mockData = [
    "updated": "2020-05-27T12:01:32.356Z",
    "summary": "Learn JavaScript",
    "description": "Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
-   "location": "London, UK",
+   "location": "Frankfurt, Germany",
    "creator": {
     "email": "fullstackwebdev@careerfoundry.com",
     "self": true
@@ -206,7 +206,7 @@ const mockData = [
    "updated": "2020-05-27T11:45:37.792Z",
    "summary": "React is Fun",
    "description": "Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
-   "location": "Berlin, Germany",
+   "location": "Frankfurt, Germany",
    "creator": {
     "email": "fullstackwebdev@careerfoundry.com",
     "self": true
@@ -245,7 +245,7 @@ const mockData = [
    "updated": "2020-05-27T12:01:32.356Z",
    "summary": "Learn JavaScript",
    "description": "Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
-   "location": "London, UK",
+   "location": "Hamburg, Germany",
    "creator": {
     "email": "fullstackwebdev@careerfoundry.com",
     "self": true
@@ -284,7 +284,7 @@ const mockData = [
    "updated": "2020-05-27T11:45:37.792Z",
    "summary": "React is Fun",
    "description": "Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
-   "location": "Berlin, Germany",
+   "location": "Hamburg, Germany",
    "creator": {
     "email": "fullstackwebdev@careerfoundry.com",
     "self": true
@@ -323,7 +323,7 @@ const mockData = [
    "updated": "2020-05-27T12:01:32.356Z",
    "summary": "Learn JavaScript",
    "description": "Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
-   "location": "London, UK",
+   "location": "Hamburg, Germany",
    "creator": {
     "email": "fullstackwebdev@careerfoundry.com",
     "self": true
@@ -362,7 +362,7 @@ const mockData = [
    "updated": "2020-05-27T11:45:37.792Z",
    "summary": "React is Fun",
    "description": "Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
-   "location": "Berlin, Germany",
+   "location": "Hannover, Germany",
    "creator": {
     "email": "fullstackwebdev@careerfoundry.com",
     "self": true
@@ -440,7 +440,7 @@ const mockData = [
    "updated": "2020-05-27T11:45:37.792Z",
    "summary": "React is Fun",
    "description": "Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
-   "location": "Berlin, Germany",
+   "location": "Hannover, Germany",
    "creator": {
     "email": "fullstackwebdev@careerfoundry.com",
     "self": true
@@ -518,7 +518,7 @@ const mockData = [
    "updated": "2020-05-27T11:45:37.792Z",
    "summary": "React is Fun",
    "description": "Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
-   "location": "Berlin, Germany",
+   "location": "Hannover, Germany",
    "creator": {
     "email": "fullstackwebdev@careerfoundry.com",
     "self": true
@@ -596,7 +596,7 @@ const mockData = [
    "updated": "2020-05-27T11:45:37.792Z",
    "summary": "React is Fun",
    "description": "Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
-   "location": "Berlin, Germany",
+   "location": "Hannover, Germany",
    "creator": {
     "email": "fullstackwebdev@careerfoundry.com",
     "self": true
