@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <title>Test Auth Server</title>
   </head>
 
@@ -71,6 +70,7 @@
 
       // --------------------- STEP 2
       // -- STEP 3
+      const accessTokenElement = document.getElementById("accessToken"); // Define it here
       const getEvents = document.getElementById("getEvents");
       const events = document.getElementById("events");
       const getCalendarEvents = "https://a0u7kwigrc.execute-api.eu-central-1.amazonaws.com/dev/api/get-events";
@@ -89,7 +89,6 @@
       // -- END OF STEP 3
       const codeValue = document.getElementById("code");
       const getAccessToken = document.getElementById("getToken");
-      const accessTokenElement = document.getElementById("accessToken");
       const getToken =
         "https://a0u7kwigrc.execute-api.eu-central-1.amazonaws.com/dev/api/token";
 
@@ -110,7 +109,6 @@
           });
       };
       // --------------------- END OF STEP 2
-
     </script>
   </body>
 </html>
