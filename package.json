@@ -51,6 +51,10 @@
       "last 1 safari version"
     ]
   },
+  "styles": [
+    "src/styles/styles.css",
+    "src/components/App.css" 
+  ],
   "devDependencies": {
     "@babel/core": "^7.23.3",
     "@babel/plugin-proposal-private-methods": "^7.21.11", 
