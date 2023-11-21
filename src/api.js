@@ -48,7 +48,7 @@ const getToken = async (code) => {
   try {
     const encodeCode = encodeURIComponent(code);
     const response = await fetch(
-      "https://a0u7kwigrc.execute-api.eu-central-1.amazonaws.com/dev/api/token/{code}"
+      'https://a0u7kwigrc.execute-api.eu-central-1.amazonaws.com/dev/api' + '/' + encodeCode
     );
 
     if (!response.ok) {
@@ -110,8 +110,7 @@ export const getEvents = async () => {
       removeQuery();
       const url =
         "https://a0u7kwigrc.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" +
-        "/" +
-        token;
+        "/" + token;
 
       const response = await fetch(url);
 
