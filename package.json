@@ -2,7 +2,7 @@
   "name": "meet",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/jmahanera/LetsMeet/",
+  "homepage": "./",
   "dependencies": {
     "@babel/plugin-proposal-private-methods": "^7.18.6",
     "@testing-library/jest-dom": "^6.1.4",
