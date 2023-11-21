@@ -9,8 +9,7 @@ export const extractLocations = (events) => {
 const checkToken = async (accessToken) => {
   try {
     const response = await fetch(
-      `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`,
-      { mode: 'no-cors' } // Add 'no-cors' mode here
+      `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
     );
 
     if (!response.ok) {
@@ -49,8 +48,7 @@ const getToken = async (code) => {
   try {
     const encodeCode = encodeURIComponent(code);
     const response = await fetch(
-      'https://a0u7kwigrc.execute-api.eu-central-1.amazonaws.com/dev/api/token' + '/' + encodeCode,
-      { mode: 'no-cors' } // Add 'no-cors' mode here
+      'https://a0u7kwigrc.execute-api.eu-central-1.amazonaws.com/dev/api/token' + '/' + encodeCode
     );
 
     if (!response.ok) {
@@ -78,8 +76,7 @@ export const getAccessToken = async () => {
 
       if (!code) {
         const response = await fetch(
-          "https://a0u7kwigrc.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url",
-          { mode: 'no-cors' } // Add 'no-cors' mode here
+          "https://a0u7kwigrc.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url"
         );
 
         if (!response.ok) {
@@ -112,10 +109,9 @@ export const getEvents = async () => {
     if (token) {
       removeQuery();
       const url =
-        "https://a0u7kwigrc.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" +
-        "/" + token;
+        "https://a0u7kwigrc.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" + "/" + token;
 
-      const response = await fetch(url, { mode: 'no-cors' }); // Add 'no-cors' mode here
+      const response = await fetch(url);
 
       if (!response.ok) {
         throw new Error('Failed to get events');
