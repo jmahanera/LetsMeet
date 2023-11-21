@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/jmahanera/LetsMeet/static/css/main.7e36ed50.css",
+    "main.js": "/jmahanera/LetsMeet/static/js/main.ff5d8c05.js",
+    "static/js/651.292424a1.chunk.js": "/jmahanera/LetsMeet/static/js/651.292424a1.chunk.js",
+    "service-worker.js": "/jmahanera/LetsMeet/service-worker.js",
+    "index.html": "/jmahanera/LetsMeet/index.html",
+    "main.7e36ed50.css.map": "/jmahanera/LetsMeet/static/css/main.7e36ed50.css.map",
+    "main.ff5d8c05.js.map": "/jmahanera/LetsMeet/static/js/main.ff5d8c05.js.map",
+    "651.292424a1.chunk.js.map": "/jmahanera/LetsMeet/static/js/651.292424a1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e36ed50.css",
+    "static/js/main.ff5d8c05.js"
+  ]
+}
