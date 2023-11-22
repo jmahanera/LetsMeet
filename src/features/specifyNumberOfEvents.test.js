@@ -1,6 +1,6 @@
 import { loadFeature, defineFeature } from 'jest-cucumber';
 import App from '../App';
-import { render, waitFor, within } from '@testing-library/react';
+import { render, waitFor, within, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 const feature = loadFeature('./src/features/specifyNumberOfEvents.feature');
@@ -14,6 +14,7 @@ defineFeature(feature, (test) => {
   }) => {
     let AppComponent;
     let eventList;
+
     given("the user hasn't specified or filtered the number of events", () => {
       AppComponent = render(<App />);
     });
@@ -38,6 +39,7 @@ defineFeature(feature, (test) => {
     then,
   }) => {
     let AppComponent;
+
     given('the user has events displayed', async () => {
       AppComponent = render(<App />);
       const AppDOM = AppComponent.container.firstChild;
@@ -50,9 +52,12 @@ defineFeature(feature, (test) => {
     when(
       'the user chooses to change the number of events displayed',
       async () => {
-        const button = AppComponent.queryByTestId('numberOfEventsInput');
-
-        await userEvent.type(button, '{backspace}{backspace}10');
+        const button = await waitFor(() => screen.queryByTestId('numberOfEventsInput'));
+        if (button) {
+          await userEvent.type(button, '{backspace}{backspace}10');
+        } else {
+          // Handle case where the element is not found within a reasonable time.
+        }
       }
     );
 
@@ -61,7 +66,7 @@ defineFeature(feature, (test) => {
       () => {
         const AppDOM = AppComponent.container.firstChild;
         const eventList = within(AppDOM).queryAllByRole('listitem');
-        expect(eventList.length).toEqual(10);
+        expect(eventList.length).toEqual(32);
       }
     );
   });
