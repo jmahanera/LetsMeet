@@ -105,4 +105,20 @@ As a user, I would like to be able to see a chart showing the upcoming events in
 
 **USE OF SERVERLESS FUNCTION IN THE MEET APP**
 
-- The Meet App can use serverless functions for event notifications, real-time data processing, user authentication, event recommendations, , and scalability. By leveraging serverless technology, the app can efficiently handle backend processes, provide personalized experiences, and scale according to user demand.
+- **The Meet App** can use serverless functions for event notifications, real-time data processing, user authentication, event recommendations, , and scalability. By leveraging serverless technology, the app can efficiently handle backend processes, provide personalized experiences, and scale according to user demand.
+
+- ## Note: **Continuous Integration (CI)** **AND** **Continuous Delivery (CD),**
+- **Continuous Integration (CI)** stands as a fundamental software development practice wherein developers locally craft code and subsequently commit changes to a shared version control system, such as Git. Automated CI tools then scrutinize the code for compilation errors; if any are detected, developers receive immediate notifications. Conversely, if no errors are identified, the code is deemed ready for deployment or further testing. This systematic approach substantially diminishes the likelihood of intricate errors, upholds the quality of products/services, and economizes time and resources.
+- 
+**Continuous Delivery (CD),** on the other hand, is a software development practice that guarantees the perpetual readiness of software for deployment, even in the face of daily alterations made by multiple developers. Emphasizing frequent and incremental releases over infrequent large-scale deployments, CD mitigates risks associated with each deployment by rendering smaller changes more comprehensible and manageable, thus facilitating troubleshooting.
+  
+The utilization of CI and CD tools during the development process bestows various advantages. CI tools furnish prompt feedback to developers subsequent to each code commit, simplifying the identification and rectification of errors in the early stages of development. Frequent integration of code changes also mitigates the intricacies of merging. CD ensures that every modification to the software can be safely delivered to production, reducing risks associated with deployments through faster and more frequent software releases. Moreover, CI/CD fosters enhanced collaboration among development, testing, and operations teams, diminishes system downtime, and ensures smoother user experiences.
+**To implement CI/CD`** practices in the development of the Meet app, several key steps can be followed:
+**1.	Store all code in a version control system like Git to meticulously track every change.**
+**2.	Develop new features on separate branches, subsequently merging them into the main codebase upon completion.**
+**3.	Integrate automated testing to scrutinize every code submission to Git.**
+**4.	Promptly notify developers of conflicts or errors detected during automated testing, enabling swift resolution.**
+**5.	Regularly monitor automated tests, build processes, and deployments to ensure ongoing efficiency.**
+**6.	Once the code successfully passes all automated tests and quality checks, prepare it for release.**
+This approach to CI/CD not only ensures the sustained quality of the code but also facilitates timely feature releases.
+
