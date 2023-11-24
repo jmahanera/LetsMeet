@@ -26,6 +26,7 @@ Run the following command to install the necessary dependencies.
 - Jest
 - React testing library
 - Puppeteer
+- Atatus App Monitoring
 
 ## Development server
 
