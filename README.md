@@ -27,6 +27,8 @@ Run the following command to install the necessary dependencies.
 - React testing library
 - Puppeteer
 - Atatus App Monitoring
+- ![atatus-sidebar](https://github.com/jmahanera/LetsMeet/assets/122871245/6c2fa6df-d955-43fd-8a4e-ac7bc2e73736)
+
 
 ## Development server
 
