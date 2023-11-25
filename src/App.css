@@ -77,6 +77,13 @@ input[type="number"] {
   border: 1px solid #fff; /* Add border to distinguish the box */
 }
 
+.alert-container {
+  background-color: #de0606; /* Red background color */
+  color: white; /* White text color */
+  padding: 10px; /* Add padding */
+  margin-top: 5px; /* Add margin */
+  border-radius: 4px; /* Add border-radius for rounded corners */
+}
 .suggestions {
   width: 250px;
   position: absolute;
