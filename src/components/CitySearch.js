@@ -35,10 +35,14 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
     setInfoAlert(""); // Clear infoAlert when an item is clicked
   };
 
-  // useEffect to update suggestions when allLocations changes
   useEffect(() => {
-    setSuggestions(allLocations);
-  }, [allLocations]);
+  const filteredLocations = allLocations
+    ? allLocations.filter((location) =>
+        location.toUpperCase().indexOf(query.toUpperCase()) > -1
+      )
+    : [];
+  setSuggestions(filteredLocations);
+}, [allLocations, query]);
 
   return (
     <div id="city-search">
