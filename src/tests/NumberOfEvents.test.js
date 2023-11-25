@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import NumberOfEvents from "../components/NumberOfEvents";
 
@@ -14,17 +14,19 @@ describe('<NumberOfEvents /> component', () => {
     expect(numberTextBox).toHaveClass('number-of-events-input');
   });
 
-  test('default number is 32', async () => {
+  test('default number is 32', () => {
     const numberTextBox = NumberOfEventsComponent.queryByRole('textbox');
     expect(numberTextBox).toHaveValue("32");
   });
 
   test('number of events text box value changes when the user types in it', async () => {
-    const user = userEvent.setup();
     const numberTextBox = NumberOfEventsComponent.queryByRole('textbox');
-    await user.type(numberTextBox, "123");
+    await userEvent.type(numberTextBox, "123");
 
-    // 32 (the default value already written) + 123
-    expect(numberTextBox).toHaveValue("32");
+    // Use waitFor to wait for the state update
+    await waitFor(() => {
+      // Now, check if the value has been updated to "123"
+      expect(numberTextBox).toHaveValue("123");
+    });
   });
 });
