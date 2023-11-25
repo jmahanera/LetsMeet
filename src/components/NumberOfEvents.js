@@ -1,3 +1,5 @@
+// NumberOfEvents.jsx
+
 import { useState } from "react";
 
 const NumberOfEvents = () => {
@@ -33,7 +35,7 @@ const NumberOfEvents = () => {
         />
       </div>
       {alertMessage && (
-        <div style={{ color: 'red', marginTop: '5px' }}>{alertMessage}</div>
+        <div className="alert-container">{alertMessage}</div>
       )}
     </div>
   );
