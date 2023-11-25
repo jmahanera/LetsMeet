@@ -1,9 +1,14 @@
+/* Reset the box-sizing to border-box globally */
+* {
+  box-sizing: border-box;
+}
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
 .App {
   text-align: center;
   padding: 2% 5%;
-  background-color: #473f09;
+  background-color: rgb(16, 4, 102);
   color: white; /* Set text color to white */
 }
 
@@ -26,13 +31,21 @@ input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #6a0a0a;
+  border: 1px solid #0679ae;
   font-size: 14px;
   line-height: 20px;
   align-self: center;
   height: 38px;
   margin-bottom: 20px;
   color: black; /* Set text color to white */
+}
+
+.alerts-container {
+  position: fixed;
+  top: 0px;
+  left: 20px;
+  width: 250px;
+  z-index: 1000;
 }
 
 .city {
@@ -44,6 +57,15 @@ input[type="number"] {
   flex-direction: column;
   margin: auto;
   position: relative;
+}
+
+/* Added .info-alert styles */
+.info-alert {
+  background-color: #de0606; /* Set background color */
+  color: white; /* Set text color */
+  padding: 10px; /* Add padding */
+  margin-top: 10px; /* Add margin */
+  border-radius: 4px; /* Add border-radius for rounded corners */
 }
 
 .suggestions {
@@ -75,7 +97,7 @@ input[type="number"] {
 }
 
 .event {
-  background-color: #4b072d;
+  background-color: #044b82;
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: center;
@@ -92,14 +114,6 @@ input[type="number"] {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-}
-
-.alerts-container {
-  position: fixed;
-  top: 0px;
-  left: 20px;
-  width: 250px;
-  z-index: 1000;
 }
 
 .charts-container {
