@@ -1,34 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
-  const [numberOfEvents, setNumberOfEvents] = useState("32"); // Set a default value of 32
+  // const [eventsNumber, setEventsNumber] = useState("32");
 
   const handleInputChanged = (event) => {
     const value = event.target.value;
-    setNumberOfEvents(value);
+    console.log("THE VALUE IS:", value);
     setCurrentNOE(value);
-
-    let infoText;
+    let errorText;
     if (isNaN(value) || value <= 0) {
-      infoText = 'Please enter a valid number greater than 0.';
-      setErrorAlert(infoText);
+      errorText = "Number must be more than zero.";
+      setErrorAlert(errorText);
     } else {
-      infoText = '';
-      setErrorAlert(infoText);
+      errorText = "";
+      setErrorAlert(errorText);
       setCurrentNOE(value);
     }
   };
 
   return (
-    <div id="numberOfEvents" className="number-of-events">
-      <label htmlFor="eventNumberInput">Number of Events:</label>
-      <input 
-        id="eventNumberInput"
+    <div id="number-of-events">
+      <p>Number of Events:</p>
+      <input
+        data-testid="event-number-imput"
         type="text"
-        value={numberOfEvents}
+        className="event-number"
+        // placeholder="32"
+        defaultValue="32"
         onChange={handleInputChanged}
-        data-testid="numberOfEventsInput"
-        className="event-number-input"
       />
     </div>
   );

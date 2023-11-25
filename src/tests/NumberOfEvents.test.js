@@ -1,32 +1,36 @@
-import { render, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render } from "@testing-library/react";
 import NumberOfEvents from "../components/NumberOfEvents";
+import userEvent from "@testing-library/user-event";
 
-describe('<NumberOfEvents /> component', () => {
+
+describe("<NumberOfEvents /> component", () => {
+  //
   let NumberOfEventsComponent;
   beforeEach(() => {
-    NumberOfEventsComponent = render(<NumberOfEvents />);
+    NumberOfEventsComponent = render(
+      <NumberOfEvents setCurrentNOE={() => {}} setErrorAlert={() => {}} />
+    );
   });
 
-  test('renders number of events text input', () => {
-    const numberTextBox = NumberOfEventsComponent.queryByRole('textbox');
-    expect(numberTextBox).toBeInTheDocument();
-    expect(numberTextBox).toHaveClass('number-of-events-input');
+  //
+  test("renders text input", () => {
+    const NumberOfEventsTextBox =
+      NumberOfEventsComponent.queryByRole("textbox");
+
+    expect(NumberOfEventsTextBox).toBeInTheDocument();
+    expect(NumberOfEventsTextBox).toHaveClass("event-number");
   });
 
-  test('default number is 32', () => {
-    const numberTextBox = NumberOfEventsComponent.queryByRole('textbox');
-    expect(numberTextBox).toHaveValue("32");
+  //
+  test("number of events is 32 by default", () => {
+    const textBox = NumberOfEventsComponent.queryByRole("textbox");
+
+    expect(textBox.value).toBe("32");
   });
 
-  test('number of events text box value changes when the user types in it', async () => {
-    const numberTextBox = NumberOfEventsComponent.queryByRole('textbox');
-    await userEvent.type(numberTextBox, "123");
-
-    // Use waitFor to wait for the state update
-    await waitFor(() => {
-      // Now, check if the value has been updated to "123"
-      expect(numberTextBox).toHaveValue("123");
-    });
+  test("updates number of events when user types", async () => {
+    const input = NumberOfEventsComponent.queryByRole("textbox");
+    await userEvent.type(input, "{backspace}{backspace}10");
+    expect(input).toHaveValue("10");
   });
 });
