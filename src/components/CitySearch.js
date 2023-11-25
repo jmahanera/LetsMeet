@@ -1,34 +1,43 @@
 import React, { useState, useEffect } from "react";
 
-
 const CitySearch = ({ allLocations, setCurrentCity }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
-
-  // useEffect to update suggestions when allLocations changes
-  useEffect(() => {
-    setSuggestions(allLocations);
-  }, [allLocations]);
+  const [infoAlert, setInfoAlert] = useState(""); // Assuming you have this state
 
   const handleInputChanged = (event) => {
     const value = event.target.value;
     const filteredLocations = allLocations
       ? allLocations.filter((location) =>
-        location.toUpperCase().indexOf(value.toUpperCase()) > -1
-      )
+          location.toUpperCase().indexOf(value.toUpperCase()) > -1
+        )
       : [];
 
     setQuery(value);
     setSuggestions(filteredLocations);
+
+    let infoText;
+    if (filteredLocations.length === 0) {
+      infoText =
+        "We can not find the city you are looking for. Please try another city";
+    } else {
+      infoText = "";
+    }
+    setInfoAlert(infoText);
   };
 
-const handleItemClicked = (event) => {
+  const handleItemClicked = (event) => {
     const value = event.target.textContent;
     setQuery(value);
     setShowSuggestions(false);
     setCurrentCity(value);
   };
+
+  // useEffect to update suggestions when allLocations changes
+  useEffect(() => {
+    setSuggestions(allLocations);
+  }, [allLocations]);
 
   return (
     <div id="city-search">
@@ -40,21 +49,21 @@ const handleItemClicked = (event) => {
         onFocus={() => setShowSuggestions(true)}
         onChange={handleInputChanged}
       />
-      {showSuggestions ?
+      {showSuggestions ? (
         <ul className="suggestions">
           {suggestions.map((suggestion) => (
-            <li onClick={handleItemClicked} key={suggestion}>{suggestion}</li>
+            <li onClick={handleItemClicked} key={suggestion}>
+              {suggestion}
+            </li>
           ))}
-          <li key='See all cities' onClick={handleItemClicked}>
+          <li key="See all cities" onClick={handleItemClicked}>
             <b>See all cities</b>
           </li>
         </ul>
-        : null
-      }
+      ) : null}
+      {infoAlert && <div className="info-alert">{infoAlert}</div>}
     </div>
   );
 };
-
-
 
 export default CitySearch;
