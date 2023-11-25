@@ -32,6 +32,7 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
     setQuery(value);
     setShowSuggestions(false);
     setCurrentCity(value);
+    setInfoAlert("")
   };
 
   // useEffect to update suggestions when allLocations changes
