@@ -1,8 +1,8 @@
 // src/__tests__/NumberOfEvents.test.js
 
-import { render } from '@testing-library/react';
+import { render, waitFor, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import NumberOfEvents from '../components/NumberOfEvents';
+import NumberOfEvents from "../components/NumberOfEvents";
 
 describe('<NumberOfEvents /> component', () => {
   let NumberOfEventsComponent;

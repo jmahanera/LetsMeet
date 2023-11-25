@@ -68,6 +68,15 @@ input[type="number"] {
   border-radius: 4px; /* Add border-radius for rounded corners */
 }
 
+.error-alert {
+  background-color: #de0606; /* Set background color to red */
+  color: white; /* Set text color to white */
+  padding: 10px; /* Add padding */
+  margin-top: 10px; /* Add margin */
+  border-radius: 4px; /* Add border-radius for rounded corners */
+  border: 1px solid #fff; /* Add border to distinguish the box */
+}
+
 .suggestions {
   width: 250px;
   position: absolute;
