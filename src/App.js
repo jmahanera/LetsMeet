@@ -44,7 +44,7 @@ const App = () => {
     LetsMeet <span role="img" aria-label="globe" className="globe-symbol">🌐</span>
   </h1>
   <h3 className="subtitle">
-    Search most relevant Tech Events around the World!
+    Search Tech Events around the World!
   </h3>
 </div>
 
