@@ -39,14 +39,16 @@ const App = () => {
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
         {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>
-  <div className="title-box">
+ <div className="title-box">
   <h1 className="title">
-    LetsMeet <span role="img" aria-label="globe" className="globe-symbol">🌐</span>
+    LetsMeet <span role="img" aria-label="group" className="group-symbol">👥</span>
   </h1>
   <h3 className="subtitle">
     Search Tech Events around the World!
   </h3>
 </div>
+
+
 
 
 
