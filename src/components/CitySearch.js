@@ -23,20 +23,10 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
     setQuery(value);
     setSuggestions(filteredLocations);
 
-    // Display info alert if no matching cities are found
-    /*let infoText;
-    if (filteredLocations.length === 0) {
-      infoText =
-        "We cannot find the city you are looking for. Please try another city";
-    } else {
-      infoText = "";
-    }
-    setInfoAlert(infoText);
-  };*/
-    
+    // Display info alert if no matching cities are found  
     let infoText;
     if (isNaN(value) || value <= 0) {
-      infoText = "We cannot find the city you are looking for. Please try another city";
+      infoText = " City not found. Please try another city";
       setInfoAlert(infoText);
     } else {
       infoText = "";
