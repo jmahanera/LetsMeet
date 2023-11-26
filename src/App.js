@@ -39,6 +39,17 @@ const App = () => {
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
         {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>
+  <div className="title-box">
+  <h1 className="title">
+    LetsMeet <span role="img" aria-label="globe" className="globe-symbol">🌐</span>
+  </h1>
+  <h3 className="subtitle">
+    Search most relevant Tech Events around the World!
+  </h3>
+</div>
+
+
+
 
       <CitySearch
         allLocations={allLocations}

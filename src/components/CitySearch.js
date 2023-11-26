@@ -27,6 +27,8 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
     setInfoAlert(infoText);
   };
 
+   
+
   const handleItemClicked = (event) => {
     const value = event.target.textContent;
     setQuery(value);
