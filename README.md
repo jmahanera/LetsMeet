@@ -4,7 +4,8 @@ Welcome to LetsMeet, an innovative event discovery application built using React
 
 ## Prerequisites
 
-Before getting started with LetsMeet, ensure that you have Node.js installed on your machine.
+Before getting started with LetsMeet, ensure that you have Node.js installed on your machine. Then run
+**npx create-react-app meet --template cra-template-pwa --use-npm**
 
 ## Installation
 
@@ -37,6 +38,9 @@ Run `npm run start` for a dev server. Navigate to `http://localhost:3000/LetsMee
 ## Build
 
 Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## FrontEnd Server 
+http-server
 
 ## Deployment
 
