@@ -38,6 +38,9 @@ Run `npm run start` for a dev server. Navigate to `http://localhost:3000/LetsMee
 
 Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## FrontEnd Server 
+http-server
+
 ## Deployment
 
 Run `npm run deploy` to deploy to github pages
