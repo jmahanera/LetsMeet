@@ -5,7 +5,7 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
 
   const handleInputChanged = (event) => {
     const value = event.target.value;
-    console.log("THE VALUE IS:", value);
+    //console.log("THE VALUE IS:", value);
     setCurrentNOE(value);
     let errorText;
     if (isNaN(value) || value <= 0) {
