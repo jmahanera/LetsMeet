@@ -130,8 +130,8 @@ input[type="number"] {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-  background-color: rgb(54, 3, 3);
-  color: white; /* Set text color to white */
+  background-color: rgb(253, 251, 251);
+  color: rgb(7, 0, 0); /* Set text color to white */
 }
 
 .charts-container {
