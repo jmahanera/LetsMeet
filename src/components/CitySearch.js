@@ -26,7 +26,7 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
     // Display info alert if no matching cities are found  
     let infoText;
     if (isNaN(value) || value <= 0) {
-      infoText = " City not found. Please try another city";
+      infoText = " Selected City cannot be found in our database. Please try another city";
       setInfoAlert(infoText);
     } else {
       infoText = "";
