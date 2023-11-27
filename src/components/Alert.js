@@ -1,17 +1,16 @@
-// src/components/Alert.js
-
 import { Component } from 'react';
 
 // Base Alert class for styling and rendering alerts
 class Alert extends Component {
   constructor(props) {
     super(props);
-    // Initialize color and background color properties
+    // Initialize color, background color, and border color properties
     this.color = null;
     this.bgColor = null;
+    
   }
 
-  // Get the style object for the alert based on color and background color
+  // Get the style object for the alert based on color, background color, and border color
   getStyle = () => {
     return {
       color: this.color,
@@ -20,11 +19,14 @@ class Alert extends Component {
       borderStyle: "solid",
       fontWeight: "bolder",
       borderRadius: "7px",
-      borderColor: this.color,
+      borderColor: null, 
       textAlign: "center",
       fontSize: "12px",
-      margin: "10px 0",
-      padding: "10px"
+      margin: "10px",
+      padding: "10px",
+      position: "fixed",
+      top: "10px",
+      left: "10px"
     };
   }
 
@@ -42,9 +44,10 @@ class Alert extends Component {
 class InfoAlert extends Alert {
   constructor(props) {
     super(props);
-    // Set color and background color for informational alerts
+    // Set color, background color, and border color for informational alerts
     this.color = 'rgb(0, 0, 255)'; // blue
     this.bgColor = 'rgb(220, 220, 255)'; // light blue
+    
   }
 }
 
@@ -53,8 +56,8 @@ class ErrorAlert extends Alert {
   constructor(props) {
     super(props);
     // Set color and background color for error alerts
-    this.color = 'rgb(255,255,255)';
-    this.bgColor ='rgb(230, 0, 0)';
+    this.color = 'rgb(255, 255, 255)'; // white
+    this.bgColor = 'rgb(230, 0, 0)'; // red
   }
 }
 

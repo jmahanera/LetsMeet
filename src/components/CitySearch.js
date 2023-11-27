@@ -6,7 +6,7 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
-  const [infoAlert, setInfoAlert, setCurrentNOE] = useState("");
+  const [infoAlert, setInfoAlert] = useState("");
 
   // Handler for input changes in the search bar
   const handleInputChanged = (event) => {
@@ -23,15 +23,15 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
     setQuery(value);
     setSuggestions(filteredLocations);
 
-    // Display info alert if no matching cities are found  
+    // Display info alert if no matching cities are found
     let infoText;
-    if (isNaN(value) || value <= 0) {
-      infoText = " Selected City cannot be found in our database. Please try another city";
+    if (filteredLocations.length === 0) {
+      infoText =
+        "Selected City cannot be found. Please try another city";
       setInfoAlert(infoText);
     } else {
       infoText = "";
       setInfoAlert(infoText);
-      setCurrentNOE(value);
     }
   };
 
@@ -89,7 +89,11 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
       ) : null}
 
       {/* Display info alert if present */}
-      {infoAlert && <div className="info-alert">{infoAlert}</div>}
+      {infoAlert && (
+        <div className="info-alert" style={{ position: "fixed", top: 10, left: 10 }}>
+          {infoAlert}
+        </div>
+      )}
     </div>
   );
 };
