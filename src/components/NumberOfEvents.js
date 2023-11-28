@@ -4,20 +4,15 @@ import React, { useState } from "react";
 const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
   // Event number input change handler
   const handleInputChanged = (event) => {
-    const value = event.target.value;
-
-    // Set the current number of events based on the input value
-    setCurrentNOE(value);
+    const value = parseInt(event.target.value, 10);
 
     // Validate input value and display error message if invalid
-    let errorText;
-    if (isNaN(value) || value <= 0) {
-      errorText = "Number must be more than zero.";
+    if (isNaN(value) || value < 1 || value > 32) {
+      const errorText = "Number must be between 1 and 32.";
       setErrorAlert(errorText);
     } else {
       // Clear error message and update current number of events if input is valid
-      errorText = "";
-      setErrorAlert(errorText);
+      setErrorAlert("");
       setCurrentNOE(value);
     }
   };
@@ -31,10 +26,12 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
       {/* Input field for entering the number of events */}
       <input
         data-testid="event-number-input"
-        type="text"
+        type="number" // Change type to "number" to enforce numeric input
         className="event-number"
         defaultValue="32"
         onChange={handleInputChanged}
+        min="1"
+        max="32"
       />
     </div>
   );
