@@ -1,5 +1,5 @@
 {
-   "manifest_version": 2,
+  "manifest_version": 2,
   "short_name": "React App",
   "name": "Create React App Sample",
   "version": "1.0.0",
@@ -27,6 +27,13 @@
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"
+    },
+    
+    {
+      "src": "LetsMeet-144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any"
     }
   ],
   "start_url": ".",
