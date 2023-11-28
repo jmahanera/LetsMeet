@@ -10,12 +10,7 @@
       "sizes": "48x48",
       "purpose": "maskable"
     },
-    {
-      "src": "LetsMeet-144.png",
-      "type": "image/png",
-      "sizes": "144x144",
-      "purpose": "any"
-    },
+   
     {
       "src": "LetsMeet-192.png",
       "type": "image/png",
