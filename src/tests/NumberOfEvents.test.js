@@ -1,36 +1,34 @@
-import { render } from "@testing-library/react";
-import NumberOfEvents from "../components/NumberOfEvents";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-
+import NumberOfEvents from "../components/NumberOfEvents";
 
 describe("<NumberOfEvents /> component", () => {
-  //
-  let NumberOfEventsComponent;
+  let numberOfEventsComponent;
+
   beforeEach(() => {
-    NumberOfEventsComponent = render(
-      <NumberOfEvents setCurrentNOE={() => {}} setErrorAlert={() => {}} />
+    render(
+      <NumberOfEvents
+        setCurrentNOE={() => {}}
+        setErrorAlert={() => {}}
+      />
     );
+
+    // Use screen.getByTestId to get the input element
+    numberOfEventsComponent = screen.getByTestId("event-number-input");
   });
 
-  //
   test("renders text input", () => {
-    const NumberOfEventsTextBox =
-      NumberOfEventsComponent.queryByRole("textbox");
-
-    expect(NumberOfEventsTextBox).toBeInTheDocument();
-    expect(NumberOfEventsTextBox).toHaveClass("event-number");
+    expect(numberOfEventsComponent).toBeInTheDocument();
+    expect(numberOfEventsComponent).toHaveClass("event-number");
   });
 
-  //
   test("number of events is 32 by default", () => {
-    const textBox = NumberOfEventsComponent.queryByRole("textbox");
-
-    expect(textBox.value).toBe("32");
+    expect(numberOfEventsComponent.value).toBe("32");
   });
+test("updates number of events when user types", async () => {
+  // Use numberOfEventsComponent instead of NumberOfEventsComponent
+  await userEvent.type(numberOfEventsComponent, "{backspace}{backspace}10");
+  expect(Number(numberOfEventsComponent.value)).toBe(10);
+});
 
-  test("updates number of events when user types", async () => {
-    const input = NumberOfEventsComponent.queryByRole("textbox");
-    await userEvent.type(input, "{backspace}{backspace}10");
-    expect(input).toHaveValue("10");
-  });
 });

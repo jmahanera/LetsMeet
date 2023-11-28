@@ -73,6 +73,9 @@ export const getAccessToken = async () => {
 };
 
 // Function to asynchronously fetch the list of all events
+// ... (previous code)
+
+// Function to asynchronously fetch the list of all events
 export const getEvents = async () => {
     // Use mock data for local development
     if (window.location.href.startsWith("http://localhost")) {
@@ -87,12 +90,21 @@ export const getEvents = async () => {
         const url = "https://a0u7kwigrc.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" + "/" + token;
         const response = await fetch(url);
         const result = await response.json();
-        
-        // If events are present in the result, return them; otherwise, return null
+
         if (result) {
+            localStorage.setItem("lastEvents", JSON.stringify(result.events));
             return result.events;
         } else {
             return null;
         }
+    } else if (!navigator.onLine) {
+        // Use stored events from local storage if offline
+        const events = localStorage.getItem("lastEvents");
+        return events ? JSON.parse(events) : [];
     }
+
+    return null;
 };
+
+    
+
