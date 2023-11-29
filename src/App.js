@@ -22,7 +22,7 @@ const App = () => {
      if (navigator.onLine) {
      setWarningAlert("")
    } else {
-     setWarningAlert("You are on offline mode")
+     setWarningAlert("You are in offline mode")
    }
     fetchData();
   }, [currentCity, currentNOE]);
