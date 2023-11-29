@@ -42,7 +42,7 @@ const CityEventsChart = ({ allLocations, events }) => {
             left: -30,
           }}
         >
-          <CartesianGrid />
+          <CartesianGrid stroke="#fff" />
           <XAxis
             type="category"
             dataKey="city"
@@ -58,7 +58,7 @@ const CityEventsChart = ({ allLocations, events }) => {
             allowDecimals={false}
           />
           <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-          <Scatter name="A school" data={data} fill="#8884d8" />
+          <Scatter name="A school" data={data} fill="#fff" stroke="#8884d8" />
         </ScatterChart>
       </ResponsiveContainer>
     </div>
