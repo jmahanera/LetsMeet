@@ -12,43 +12,58 @@ describe('show/hide event details', () => {
       slowMo: 250,
     });
     page = await browser.newPage();
-    await page.goto('http://localhost:3000/', { waitUntil: 'domcontentloaded' });
-    await page.waitForSelector('.event', { timeout: 30000 });
+    await page.goto('http://localhost:3000/');
+    // Wait for the initial content to load
+    await page.waitForSelector('.event');
   });
 
   afterAll(async () => {
-    if (browser) {
-      await browser.close();
-    }
+    await browser.close();
   });
 
+  // SCENARIO 1
   test('An event element is collapsed by default', async () => {
-    await page.waitForSelector('.event');
-    const eventDetails = await page.$('.event .details');
-    expect(eventDetails).toBeNull();
+    // Use page.evaluate to access the DOM context inside the browser
+    const eventDetails = await page.evaluate(() => {
+      const detailsElement = document.querySelector('.event .details');
+      return detailsElement ? true : false;
+    });
+    expect(eventDetails).toBe(false);
   });
 
+  // SCENARIO 2
   test('User can expand an event to see its details', async () => {
-    await page.waitForSelector('.event');
+    // Use page.evaluate to interact with the DOM
+    await page.evaluate(() => {
+      const detailsButton = document.querySelector('.event .details-btn');
+      detailsButton.click();
+    });
 
-    const detailsButton = await page.$('.event .details-btn');
-    await detailsButton.click();
+    // Wait for the details to appear
+    await page.waitForSelector('.event .details');
 
-    await page.waitForFunction(() => document.querySelector('.event .details'));
-
-    const eventDetails = await page.$('.event .details');
-    expect(eventDetails).toBeTruthy();
+    const eventDetails = await page.evaluate(() => {
+      const detailsElement = document.querySelector('.event .details');
+      return detailsElement ? true : false;
+    });
+    expect(eventDetails).toBe(true);
   });
 
+  // SCENARIO 3
   test('User can collapse an event to hide details', async () => {
-    await page.waitForSelector('.event');
+    // Use page.evaluate to interact with the DOM
+    await page.evaluate(() => {
+      const detailsButton = document.querySelector('.event .details-btn');
+      detailsButton.click();
+    });
 
-    const detailsButton = await page.$('.event .details-btn');
-    await detailsButton.click();
+    // Wait for the details to disappear
+    await page.waitForSelector('.event .details', { hidden: true });
 
-    await page.waitForFunction(() => !document.querySelector('.event .details'));
-
-    const eventDetails = await page.$('.event .details');
-    expect(eventDetails).toBeNull();
+    const eventDetails = await page.evaluate(() => {
+      const detailsElement = document.querySelector('.event .details');
+      return detailsElement ? true : false;
+    });
+    expect(eventDetails).toBe(false);
   });
 });
