@@ -154,6 +154,7 @@ input[type="number"] {
 /* Styles for the charts container with responsive design */
 .charts-container {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
 }
 
@@ -162,5 +163,24 @@ input[type="number"] {
   .charts-container {
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+  /* Responsive styles for .chart-container */
+  .chart-container {
+    width: 100%; /* Adjust as needed */
+  }
+}
+
+/* Responsive styles for .chart-container at larger screen sizes */
+@media (min-width: 768px) {
+  .chart-container {
+    width: 80%;
+  }
+}
+
+/* Responsive styles for .chart-container at even larger screen sizes */
+@media (min-width: 1200px) {
+  .chart-container {
+    width: 60%;
   }
 }
