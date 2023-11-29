@@ -67,7 +67,7 @@ class WarningAlert extends Alert {
     super(props);
     // Set color and background color for warning alerts
     this.color = 'white';
-    this.bgColor = '#eacd65';
+    this.bgColor = 'red';
   }
 }
 
