@@ -19,6 +19,11 @@ const App = () => {
   const [warningAlert, setWarningAlert] = useState("");
 
   useEffect(() => {
+     if (navigator.onLine) {
+     ("")
+   } else {
+     ("You are in offline mode")
+   }
     fetchData();
   }, [currentCity, currentNOE]);
 
