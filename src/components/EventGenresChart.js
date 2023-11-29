@@ -45,7 +45,7 @@ const EventGenresChart = ({ events }) => {
     <div>
       <p className="graph-title">Type of Event</p>
 
-      <ResponsiveContainer width="99%" height={400}>
+      <ResponsiveContainer width="80%" height={400}>
         <PieChart>
           <Pie
             data={data}
